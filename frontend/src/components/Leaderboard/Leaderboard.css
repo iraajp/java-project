@@ -1,68 +1,84 @@
 .leaderboard h2 {
   margin-top: 0;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .leaderboard-subtitle {
-  color: #666;
-  margin-bottom: 30px;
-  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .leaderboard-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .leaderboard-item {
   display: flex;
   align-items: center;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
+  padding: 24px;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
 
 .leaderboard-item:hover {
-  background: #f5f5f5;
-  transform: translateX(5px);
+  background: var(--card-bg);
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .leaderboard-item.top-three {
-  background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
-  border-color: #ffd700;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  border-color: var(--warning);
+  color: white;
+}
+
+.leaderboard-item.top-three .user-name,
+.leaderboard-item.top-three .stat-value {
+  color: white;
+}
+
+.leaderboard-item.top-three .user-username,
+.leaderboard-item.top-three .stat-label {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .rank {
-  font-size: 32px;
-  font-weight: bold;
-  min-width: 60px;
+  font-size: 36px;
+  font-weight: 800;
+  min-width: 70px;
   text-align: center;
 }
 
 .user-info {
   flex: 1;
-  margin-left: 20px;
+  margin-left: 24px;
 }
 
 .user-name {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 4px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
 }
 
 .user-username {
   font-size: 14px;
-  color: #999;
+  color: var(--text-tertiary);
+  font-weight: 500;
 }
 
 .user-stats {
   display: flex;
-  gap: 30px;
+  gap: 36px;
 }
 
 .stat {
@@ -73,31 +89,33 @@
 
 .stat-label {
   font-size: 12px;
-  color: #999;
-  margin-bottom: 4px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .stat-value {
-  font-size: 20px;
-  font-weight: 700;
-  color: #667eea;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent-primary);
 }
 
 .stat-value.xp {
-  color: #FF9800;
+  color: var(--warning);
 }
 
 .no-data {
   text-align: center;
-  padding: 60px 20px;
-  color: #999;
+  padding: 80px 20px;
+  color: var(--text-tertiary);
 }
 
 .no-data p {
-  font-size: 16px;
+  font-size: 17px;
   margin: 0;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

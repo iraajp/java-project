@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { authAPI } from '../../services/api';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { authAPI } from "../../services/api";
 
-function Register({ onLogin }) {
+function Register({ onLogin, theme, toggleTheme }) {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    displayName: '',
+    username: "",
+    email: "",
+    password: "",
+    displayName: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
 
     try {
       const response = await authAPI.register(formData);
       const { token, userId, username, displayName, xp, level } = response.data;
       onLogin(token, { userId, username, displayName, xp, level });
-      navigate('/dashboard');
+      navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data || 'Registration failed. Please try again.');
+      setError(err.response?.data || "Registration failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -32,6 +32,9 @@ function Register({ onLogin }) {
 
   return (
     <div className="auth-container">
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      </button>
       <div className="auth-card">
         <h2>Join Productivity Social</h2>
         {error && <div className="error-message">{error}</div>}
@@ -41,7 +44,9 @@ function Register({ onLogin }) {
             <input
               type="text"
               value={formData.username}
-              onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
               required
               minLength="3"
             />
@@ -51,7 +56,9 @@ function Register({ onLogin }) {
             <input
               type="email"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
             />
           </div>
@@ -60,7 +67,9 @@ function Register({ onLogin }) {
             <input
               type="text"
               value={formData.displayName}
-              onChange={(e) => setFormData({ ...formData, displayName: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, displayName: e.target.value })
+              }
               required
             />
           </div>
@@ -69,13 +78,15 @@ function Register({ onLogin }) {
             <input
               type="password"
               value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
               required
               minLength="6"
             />
           </div>
           <button type="submit" className="btn-primary" disabled={loading}>
-            {loading ? 'Creating account...' : 'Register'}
+            {loading ? "Creating account..." : "Register"}
           </button>
         </form>
         <div className="auth-link">

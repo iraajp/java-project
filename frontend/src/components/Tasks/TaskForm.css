@@ -1,17 +1,19 @@
 .task-form {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .task-form h2 {
   margin-top: 0;
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 16px;
 }
 
 @media (max-width: 768px) {

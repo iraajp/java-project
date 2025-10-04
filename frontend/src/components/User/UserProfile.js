@@ -1,5 +1,5 @@
-import React from 'react';
-import './UserProfile.css';
+import React from "react";
+import "./UserProfile.css";
 
 function UserProfile({ user }) {
   const xpForNextLevel = () => {
@@ -10,7 +10,8 @@ function UserProfile({ user }) {
   const xpProgress = () => {
     const currentLevelXp = user.level * user.level * 100;
     const nextLevelXp = xpForNextLevel();
-    const progress = ((user.xp - currentLevelXp) / (nextLevelXp - currentLevelXp)) * 100;
+    const progress =
+      ((user.xp - currentLevelXp) / (nextLevelXp - currentLevelXp)) * 100;
     return Math.min(Math.max(progress, 0), 100);
   };
 
@@ -58,8 +59,8 @@ function UserProfile({ user }) {
             <span>Level {user?.level + 1}</span>
           </div>
           <div className="progress-bar">
-            <div 
-              className="progress-fill" 
+            <div
+              className="progress-fill"
               style={{ width: `${xpProgress()}%` }}
             ></div>
           </div>
@@ -73,13 +74,17 @@ function UserProfile({ user }) {
           <div className="detail-item">
             <span className="detail-label">Member Since:</span>
             <span className="detail-value">
-              {user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'}
+              {user?.createdAt
+                ? new Date(user.createdAt).toLocaleDateString()
+                : "N/A"}
             </span>
           </div>
           <div className="detail-item">
             <span className="detail-label">Last Updated:</span>
             <span className="detail-value">
-              {user?.updatedAt ? new Date(user.updatedAt).toLocaleDateString() : 'N/A'}
+              {user?.updatedAt
+                ? new Date(user.updatedAt).toLocaleDateString()
+                : "N/A"}
             </span>
           </div>
         </div>

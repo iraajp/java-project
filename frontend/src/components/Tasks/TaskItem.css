@@ -1,101 +1,107 @@
 .task-item {
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .task-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px var(--shadow-hover);
 }
 
 .task-item.completed {
   opacity: 0.7;
-  background-color: #f9f9f9;
+  background-color: var(--bg-tertiary);
 }
 
 .task-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .task-status {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .task-priority {
   color: white;
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .task-title {
-  margin: 0 0 10px 0;
-  font-size: 18px;
-  color: #333;
+  margin: 0 0 12px 0;
+  font-size: 19px;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .task-item.completed .task-title {
   text-decoration: line-through;
-  color: #999;
+  color: var(--text-tertiary);
 }
 
 .task-description {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 12px;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
 .task-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   font-size: 13px;
-  color: #777;
+  color: var(--text-tertiary);
 }
 
 .task-xp {
-  font-weight: 600;
-  color: #FF9800;
+  font-weight: 700;
+  color: var(--warning);
+  font-size: 14px;
 }
 
 .task-completed-at {
   font-size: 12px;
-  color: #4CAF50;
-  margin-bottom: 15px;
+  color: var(--success);
+  margin-bottom: 16px;
   font-style: italic;
+  font-weight: 500;
 }
 
 .task-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .btn-complete {
   flex: 1;
-  background-color: #4CAF50;
+  background-color: var(--success);
   color: white;
-  padding: 8px 12px;
-  font-size: 13px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .btn-complete:hover {
-  background-color: #45a049;
+  background-color: #38a169;
 }
 
 .btn-delete {
-  background-color: #f44336;
+  background-color: var(--danger);
   color: white;
-  padding: 8px 12px;
-  font-size: 13px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .btn-delete:hover {
-  background-color: #da190b;
+  background-color: #e53e3e;
 }

@@ -27,11 +27,13 @@ A React frontend application for a productivity social media platform where user
 ## Installation
 
 1. Navigate to the frontend directory:
+
 ```bash
 cd frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -39,6 +41,7 @@ npm install
 3. Make sure the backend is running on `http://localhost:8080`
 
 4. Start the development server:
+
 ```bash
 npm start
 ```
@@ -82,17 +85,20 @@ frontend/
 ## Features Overview
 
 ### Authentication
+
 - **Login**: Authenticate with username and password
 - **Register**: Create a new account with username, email, display name, and password
 - JWT token stored in localStorage for persistent sessions
 
 ### Dashboard
+
 - **Tasks Tab**: Create and manage tasks
 - **Leaderboard Tab**: View friends ranked by XP
 - **Friends Tab**: Manage friends and friend requests
 - **Profile Tab**: View your stats and progress
 
 ### Task Management
+
 - Create tasks with title, description, priority, and due date
 - Filter tasks by status (All, To Do, In Progress, Completed)
 - Complete tasks to earn XP
@@ -100,11 +106,13 @@ frontend/
 - Visual priority indicators with color coding
 
 ### Leaderboard
+
 - View friends ranked by XP
 - Top 3 positions highlighted with special styling
 - Display level and XP for each user
 
 ### Friend System
+
 - Search for users by username
 - Send friend requests
 - Accept or reject received requests
@@ -112,6 +120,7 @@ frontend/
 - Remove friends
 
 ### User Profile
+
 - View display name, username, and email
 - See current level and total XP
 - Progress bar showing XP to next level
@@ -128,6 +137,7 @@ frontend/
 ## API Integration
 
 All API calls are managed through `src/services/api.js`:
+
 - Automatic JWT token injection
 - Centralized error handling
 - Base URL configuration
@@ -135,12 +145,15 @@ All API calls are managed through `src/services/api.js`:
 ## Available Scripts
 
 ### `npm start`
+
 Runs the app in development mode.
 
 ### `npm run build`
+
 Builds the app for production to the `build` folder.
 
 ### `npm test`
+
 Launches the test runner.
 
 ## Styling

@@ -14,12 +14,14 @@ A full-stack social media application for productivity enthusiasts. Track your t
 ## 🏗️ Architecture
 
 ### Backend (Java + Spring Boot)
+
 - **Framework**: Spring Boot 3.2.0
 - **Database**: MongoDB
 - **Security**: JWT Authentication
 - **API**: RESTful endpoints
 
 ### Frontend (React)
+
 - **Framework**: React 18
 - **Routing**: React Router DOM 6
 - **HTTP Client**: Axios
@@ -74,11 +76,13 @@ java project/
 #### 1. Start MongoDB
 
 **Using Homebrew (macOS):**
+
 ```bash
 brew services start mongodb-community
 ```
 
 **Using Docker:**
+
 ```bash
 docker run -d -p 27017:27017 --name mongodb mongo:latest
 ```
@@ -118,16 +122,18 @@ Open your browser and navigate to `http://localhost:3000`
 ## 📊 XP & Level System
 
 ### Task Priority & XP Rewards
+
 - **LOW**: 10 XP 🟢
 - **MEDIUM**: 20 XP 🟠
 - **HIGH**: 30 XP 🔴
 - **URGENT**: 50 XP 🔥
 
 ### Level Progression
+
 The level system uses the formula: `Level = floor(sqrt(XP / 100)) + 1`
 
 | Level | XP Required |
-|-------|-------------|
+| ----- | ----------- |
 | 1     | 0-99        |
 | 2     | 100-399     |
 | 3     | 400-899     |
@@ -138,6 +144,7 @@ The level system uses the formula: `Level = floor(sqrt(XP / 100)) + 1`
 ## 🔐 Authentication
 
 The application uses JWT (JSON Web Tokens) for authentication:
+
 1. Register or login to receive a JWT token
 2. Token is stored in localStorage
 3. Token is automatically included in API requests
@@ -146,22 +153,26 @@ The application uses JWT (JSON Web Tokens) for authentication:
 ## 🎨 Screenshots & Features
 
 ### Dashboard
+
 - Create and manage tasks
 - Filter tasks by status
 - Complete tasks to earn XP
 - Real-time XP and level updates
 
 ### Leaderboard
+
 - View friends ranked by XP
 - Top 3 positions highlighted
 - Display level and XP for each user
 
 ### Friends
+
 - Search and add friends
 - Manage friend requests
 - View friend profiles
 
 ### Profile
+
 - View your stats and achievements
 - Track XP progress to next level
 - See account details
@@ -169,6 +180,7 @@ The application uses JWT (JSON Web Tokens) for authentication:
 ## 🛠️ Technologies Used
 
 ### Backend
+
 - Spring Boot 3.2.0
 - Spring Security
 - Spring Data MongoDB
@@ -177,12 +189,14 @@ The application uses JWT (JSON Web Tokens) for authentication:
 - Maven
 
 ### Frontend
+
 - React 18.2.0
 - React Router DOM 6.20.0
 - Axios 1.6.2
 - CSS3
 
 ### Database
+
 - MongoDB 4.4+
 
 ## 🔌 API Endpoints
@@ -190,6 +204,7 @@ The application uses JWT (JSON Web Tokens) for authentication:
 See detailed API documentation in [backend/README.md](backend/README.md)
 
 Key endpoints:
+
 - `POST /api/auth/register` - Register new user
 - `POST /api/auth/login` - Login
 - `GET /api/tasks` - Get user tasks
@@ -244,19 +259,23 @@ This project is open source and available for educational purposes.
 ## 🆘 Troubleshooting
 
 **MongoDB Connection Error:**
+
 - Ensure MongoDB is running on port 27017
 - Check MongoDB logs for errors
 
 **Backend Not Starting:**
+
 - Verify JDK 17+ is installed
 - Check if port 8080 is available
 
 **Frontend Not Loading:**
+
 - Ensure backend is running first
 - Clear browser cache and localStorage
 - Check console for errors
 
 **Authentication Issues:**
+
 - Clear localStorage in browser
 - Re-login to get a fresh token
 

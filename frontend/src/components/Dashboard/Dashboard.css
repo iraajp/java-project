@@ -1,13 +1,14 @@
 .dashboard {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
 }
 
 .navbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   color: white;
   padding: 15px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--shadow);
 }
 
 .navbar-content {
@@ -21,41 +22,68 @@
 
 .navbar-brand h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .navbar-user {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .user-stats {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 8px 15px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  gap: 16px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .user-stats span {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-theme {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-theme:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
 .btn-logout {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
   color: white;
-  padding: 8px 16px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .btn-logout:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
 .navbar-tabs {
-  background: white;
-  border-bottom: 2px solid #e0e0e0;
+  background: var(--card-bg);
+  border-bottom: 2px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .tabs {
@@ -63,31 +91,35 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  gap: 8px;
 }
 
 .tab {
-  padding: 15px 25px;
+  padding: 16px 28px;
   background: transparent;
-  color: #666;
+  color: var(--text-secondary);
   border: none;
   border-bottom: 3px solid transparent;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
+  border-radius: 8px 8px 0 0;
 }
 
 .tab:hover {
-  color: #667eea;
+  color: var(--accent-primary);
+  background: var(--bg-tertiary);
   transform: none;
 }
 
 .tab.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+  background: var(--bg-secondary);
 }
 
 .dashboard-content {
-  padding: 30px 20px;
+  padding: 32px 20px;
 }
 
 .dashboard-main {

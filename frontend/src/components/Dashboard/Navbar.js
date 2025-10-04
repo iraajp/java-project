@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-function Navbar({ user, activeTab, setActiveTab, onLogout }) {
+function Navbar({ user, activeTab, setActiveTab, onLogout, theme, toggleTheme }) {
   return (
     <>
       <nav className="navbar">
@@ -14,6 +14,9 @@ function Navbar({ user, activeTab, setActiveTab, onLogout }) {
               <span>⭐ Level {user?.level}</span>
               <span>🏆 {user?.xp} XP</span>
             </div>
+            <button onClick={toggleTheme} className="btn-theme" title="Toggle theme">
+              {theme === "light" ? "🌙" : "☀️"}
+            </button>
             <button onClick={onLogout} className="btn-logout">
               Logout
             </button>
@@ -23,26 +26,26 @@ function Navbar({ user, activeTab, setActiveTab, onLogout }) {
       <div className="navbar-tabs">
         <div className="tabs">
           <button
-            className={`tab ${activeTab === 'tasks' ? 'active' : ''}`}
-            onClick={() => setActiveTab('tasks')}
+            className={`tab ${activeTab === "tasks" ? "active" : ""}`}
+            onClick={() => setActiveTab("tasks")}
           >
             📝 Tasks
           </button>
           <button
-            className={`tab ${activeTab === 'leaderboard' ? 'active' : ''}`}
-            onClick={() => setActiveTab('leaderboard')}
+            className={`tab ${activeTab === "leaderboard" ? "active" : ""}`}
+            onClick={() => setActiveTab("leaderboard")}
           >
             🏆 Leaderboard
           </button>
           <button
-            className={`tab ${activeTab === 'friends' ? 'active' : ''}`}
-            onClick={() => setActiveTab('friends')}
+            className={`tab ${activeTab === "friends" ? "active" : ""}`}
+            onClick={() => setActiveTab("friends")}
           >
             👥 Friends
           </button>
           <button
-            className={`tab ${activeTab === 'profile' ? 'active' : ''}`}
-            onClick={() => setActiveTab('profile')}
+            className={`tab ${activeTab === "profile" ? "active" : ""}`}
+            onClick={() => setActiveTab("profile")}
           >
             👤 Profile
           </button>

@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { userAPI, friendRequestAPI } from '../../services/api';
-import './Friends.css';
+import React, { useState, useEffect } from "react";
+import { userAPI, friendRequestAPI } from "../../services/api";
+import "./Friends.css";
 
 function Friends() {
   const [friends, setFriends] = useState([]);
   const [receivedRequests, setReceivedRequests] = useState([]);
   const [sentRequests, setSentRequests] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('friends');
+  const [activeTab, setActiveTab] = useState("friends");
 
   useEffect(() => {
     fetchData();
@@ -27,7 +27,7 @@ function Friends() {
       setReceivedRequests(receivedRes.data);
       setSentRequests(sentRes.data);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     } finally {
       setLoading(false);
     }
@@ -42,19 +42,19 @@ function Friends() {
       const response = await userAPI.searchUsers(searchQuery);
       setSearchResults(response.data);
     } catch (error) {
-      console.error('Error searching users:', error);
+      console.error("Error searching users:", error);
     }
   };
 
   const sendFriendRequest = async (userId) => {
     try {
       await friendRequestAPI.sendFriendRequest(userId);
-      alert('Friend request sent!');
+      alert("Friend request sent!");
       fetchData();
       setSearchResults([]);
-      setSearchQuery('');
+      setSearchQuery("");
     } catch (error) {
-      alert(error.response?.data?.message || 'Failed to send friend request');
+      alert(error.response?.data?.message || "Failed to send friend request");
     }
   };
 
@@ -63,7 +63,7 @@ function Friends() {
       await friendRequestAPI.acceptRequest(requestId);
       fetchData();
     } catch (error) {
-      console.error('Error accepting request:', error);
+      console.error("Error accepting request:", error);
     }
   };
 
@@ -72,17 +72,17 @@ function Friends() {
       await friendRequestAPI.rejectRequest(requestId);
       fetchData();
     } catch (error) {
-      console.error('Error rejecting request:', error);
+      console.error("Error rejecting request:", error);
     }
   };
 
   const removeFriend = async (friendId) => {
-    if (window.confirm('Are you sure you want to remove this friend?')) {
+    if (window.confirm("Are you sure you want to remove this friend?")) {
       try {
         await userAPI.removeFriend(friendId);
         fetchData();
       } catch (error) {
-        console.error('Error removing friend:', error);
+        console.error("Error removing friend:", error);
       }
     }
   };
@@ -95,7 +95,7 @@ function Friends() {
     <div className="friends">
       <div className="card">
         <h2>👥 Friends</h2>
-        
+
         <div className="search-section">
           <h3>🔍 Find Friends</h3>
           <div className="search-bar">
@@ -104,11 +104,13 @@ function Friends() {
               placeholder="Search users by username..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              onKeyPress={(e) => e.key === "Enter" && handleSearch()}
             />
-            <button onClick={handleSearch} className="btn-search">Search</button>
+            <button onClick={handleSearch} className="btn-search">
+              Search
+            </button>
           </div>
-          
+
           {searchResults.length > 0 && (
             <div className="search-results">
               {searchResults.map((user) => (
@@ -132,27 +134,31 @@ function Friends() {
         <div className="tabs-container">
           <div className="friend-tabs">
             <button
-              className={`friend-tab ${activeTab === 'friends' ? 'active' : ''}`}
-              onClick={() => setActiveTab('friends')}
+              className={`friend-tab ${
+                activeTab === "friends" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("friends")}
             >
               Friends ({friends.length})
             </button>
             <button
-              className={`friend-tab ${activeTab === 'received' ? 'active' : ''}`}
-              onClick={() => setActiveTab('received')}
+              className={`friend-tab ${
+                activeTab === "received" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("received")}
             >
               Received ({receivedRequests.length})
             </button>
             <button
-              className={`friend-tab ${activeTab === 'sent' ? 'active' : ''}`}
-              onClick={() => setActiveTab('sent')}
+              className={`friend-tab ${activeTab === "sent" ? "active" : ""}`}
+              onClick={() => setActiveTab("sent")}
             >
               Sent ({sentRequests.length})
             </button>
           </div>
         </div>
 
-        {activeTab === 'friends' && (
+        {activeTab === "friends" && (
           <div className="friends-list">
             {friends.length === 0 ? (
               <div className="no-data">
@@ -180,7 +186,7 @@ function Friends() {
           </div>
         )}
 
-        {activeTab === 'received' && (
+        {activeTab === "received" && (
           <div className="requests-list">
             {receivedRequests.length === 0 ? (
               <div className="no-data">
@@ -212,7 +218,7 @@ function Friends() {
           </div>
         )}
 
-        {activeTab === 'sent' && (
+        {activeTab === "sent" && (
           <div className="requests-list">
             {sentRequests.length === 0 ? (
               <div className="no-data">

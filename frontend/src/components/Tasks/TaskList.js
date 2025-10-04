@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { taskAPI } from '../../services/api';
-import TaskItem from './TaskItem';
-import './TaskList.css';
+import React, { useState, useEffect } from "react";
+import { taskAPI } from "../../services/api";
+import TaskItem from "./TaskItem";
+import "./TaskList.css";
 
 function TaskList({ onTaskUpdate }) {
   const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState('ALL');
+  const [filter, setFilter] = useState("ALL");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function TaskList({ onTaskUpdate }) {
       const response = await taskAPI.getTasks();
       setTasks(response.data);
     } catch (error) {
-      console.error('Error fetching tasks:', error);
+      console.error("Error fetching tasks:", error);
     } finally {
       setLoading(false);
     }
@@ -30,23 +30,23 @@ function TaskList({ onTaskUpdate }) {
       fetchTasks();
       onTaskUpdate();
     } catch (error) {
-      console.error('Error completing task:', error);
+      console.error("Error completing task:", error);
     }
   };
 
   const handleDelete = async (taskId) => {
-    if (window.confirm('Are you sure you want to delete this task?')) {
+    if (window.confirm("Are you sure you want to delete this task?")) {
       try {
         await taskAPI.deleteTask(taskId);
         fetchTasks();
       } catch (error) {
-        console.error('Error deleting task:', error);
+        console.error("Error deleting task:", error);
       }
     }
   };
 
   const filteredTasks = tasks.filter((task) => {
-    if (filter === 'ALL') return true;
+    if (filter === "ALL") return true;
     return task.status === filter;
   });
 
@@ -60,26 +60,26 @@ function TaskList({ onTaskUpdate }) {
         <h2>📋 My Tasks</h2>
         <div className="filter-buttons">
           <button
-            className={`filter-btn ${filter === 'ALL' ? 'active' : ''}`}
-            onClick={() => setFilter('ALL')}
+            className={`filter-btn ${filter === "ALL" ? "active" : ""}`}
+            onClick={() => setFilter("ALL")}
           >
             All
           </button>
           <button
-            className={`filter-btn ${filter === 'TODO' ? 'active' : ''}`}
-            onClick={() => setFilter('TODO')}
+            className={`filter-btn ${filter === "TODO" ? "active" : ""}`}
+            onClick={() => setFilter("TODO")}
           >
             To Do
           </button>
           <button
-            className={`filter-btn ${filter === 'IN_PROGRESS' ? 'active' : ''}`}
-            onClick={() => setFilter('IN_PROGRESS')}
+            className={`filter-btn ${filter === "IN_PROGRESS" ? "active" : ""}`}
+            onClick={() => setFilter("IN_PROGRESS")}
           >
             In Progress
           </button>
           <button
-            className={`filter-btn ${filter === 'COMPLETED' ? 'active' : ''}`}
-            onClick={() => setFilter('COMPLETED')}
+            className={`filter-btn ${filter === "COMPLETED" ? "active" : ""}`}
+            onClick={() => setFilter("COMPLETED")}
           >
             Completed
           </button>
