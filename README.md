@@ -1,6 +1,10 @@
-# Productivity Social
+# Productivity Social 🚀
 
 A full-stack social media application for productivity enthusiasts. Track your tasks, earn XP, level up, and compete with friends on a leaderboard!
+
+## 🌐 Deployment Ready
+
+This application is configured for easy deployment to **Render** with **MongoDB Atlas**. See [RENDER_QUICK_START.md](./RENDER_QUICK_START.md) for a 15-minute deployment guide!
 
 ## 🎯 Features
 
