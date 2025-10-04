@@ -40,7 +40,11 @@
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   color: white;
   border-color: var(--accent-primary);
 }

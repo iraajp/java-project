@@ -1,6 +1,13 @@
 import React from "react";
 
-function Navbar({ user, activeTab, setActiveTab, onLogout, theme, toggleTheme }) {
+function Navbar({
+  user,
+  activeTab,
+  setActiveTab,
+  onLogout,
+  theme,
+  toggleTheme,
+}) {
   return (
     <>
       <nav className="navbar">
@@ -14,7 +21,11 @@ function Navbar({ user, activeTab, setActiveTab, onLogout, theme, toggleTheme })
               <span>⭐ Level {user?.level}</span>
               <span>🏆 {user?.xp} XP</span>
             </div>
-            <button onClick={toggleTheme} className="btn-theme" title="Toggle theme">
+            <button
+              onClick={toggleTheme}
+              className="btn-theme"
+              title="Toggle theme"
+            >
               {theme === "light" ? "🌙" : "☀️"}
             </button>
             <button onClick={onLogout} className="btn-logout">

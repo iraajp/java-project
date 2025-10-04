@@ -58,7 +58,11 @@ function App() {
             path="/login"
             element={
               !isAuthenticated ? (
-                <Login onLogin={handleLogin} theme={theme} toggleTheme={toggleTheme} />
+                <Login
+                  onLogin={handleLogin}
+                  theme={theme}
+                  toggleTheme={toggleTheme}
+                />
               ) : (
                 <Navigate to="/dashboard" />
               )
@@ -68,7 +72,11 @@ function App() {
             path="/register"
             element={
               !isAuthenticated ? (
-                <Register onLogin={handleLogin} theme={theme} toggleTheme={toggleTheme} />
+                <Register
+                  onLogin={handleLogin}
+                  theme={theme}
+                  toggleTheme={toggleTheme}
+                />
               ) : (
                 <Navigate to="/dashboard" />
               )
@@ -78,7 +86,11 @@ function App() {
             path="/dashboard"
             element={
               isAuthenticated ? (
-                <Dashboard onLogout={handleLogout} theme={theme} toggleTheme={toggleTheme} />
+                <Dashboard
+                  onLogout={handleLogout}
+                  theme={theme}
+                  toggleTheme={toggleTheme}
+                />
               ) : (
                 <Navigate to="/login" />
               )

@@ -31,7 +31,11 @@
 }
 
 .btn-search {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   color: white;
   padding: 12px 28px;
   font-weight: 600;
